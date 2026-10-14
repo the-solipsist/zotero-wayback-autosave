@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "Wayback Autosave",
+  "version": "1.1.0",
+  "description": "Automatically save new Zotero items to the Internet Archive Wayback Machine (Save Page Now), however they were added. Manual save via right-click menu.",
+  "author": "Muse Spark",
+  "homepage_url": "https://github.com/the-solipsist",
+  "icons": {
+    "48": "skin/default/icon.svg",
+    "96": "skin/default/icon.svg"
+  },
+  "applications": {
+    "zotero": {
+      "id": "wayback-autosave@pranesh",
+      "update_url": "https://github.com/the-solipsist/zotero-wayback-autosave/releases/latest/download/update.json",
+      "strict_min_version": "7.0",
+      "strict_max_version": "10.*"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<!-- Wayback Autosave for Zotero. Copyright (C) 2026 Pranesh Prakash.
+     SPDX-License-Identifier: GPL-3.0-or-later. See COPYING. -->
+<vbox id="zotero-prefpane-wayback-autosave"
+  onload="Zotero.WaybackAutosave.prefsUI.onLoad(window)">
+  <groupbox>
+    <label><html:h2>Wayback Autosave</html:h2></label>
+    <checkbox id="wayback-autosave-auto" label="Automatically archive the URL of every new item"
+      oncommand="Zotero.WaybackAutosave.prefsUI.onToggleAuto(this)" />
+    <separator class="thin" />
+    <description style="white-space: normal; word-break: break-word;">Internet Archive S3 keys (optional: raises the save quota from the shared anonymous bucket to your personal 100k/day). Get them at archive.org/account/s3.php — they stay in your local Zotero prefs.</description>
+    <hbox align="center">
+      <label value="S3 access key:" />
+      <html:input id="wayback-autosave-s3access" type="text" flex="1"
+        oninput="Zotero.WaybackAutosave.prefsUI.onKeyInput('s3access', this)" />
+    </hbox>
+    <hbox align="center">
+      <label value="S3 secret key:" />
+      <html:input id="wayback-autosave-s3secret" type="password" flex="1"
+        oninput="Zotero.WaybackAutosave.prefsUI.onKeyInput('s3secret', this)" />
+    </hbox>
+    <separator class="thin" />
+    <description style="white-space: normal; word-break: break-word;">Without keys the plugin uses anonymous saving (same IP quota as everyone on your network).</description>
+  </groupbox>
+</vbox>

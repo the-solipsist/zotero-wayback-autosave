@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 1 L 9 5 L 0 9 z" fill="#ffffff"/>
+    </marker>
+  </defs>
+  <rect x="4" y="4" width="88" height="88" rx="20" fill="#1d4ed8"/>
+  <!-- rewind ring: history looping back -->
+  <path d="M 74 60 A 28 28 0 1 1 70 30" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+  <!-- clock face -->
+  <circle cx="48" cy="48" r="16" fill="#ffffff"/>
+  <line x1="48" y1="48" x2="48" y2="38" stroke="#1d4ed8" stroke-width="4" stroke-linecap="round"/>
+  <line x1="48" y1="48" x2="56" y2="52" stroke="#1d4ed8" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="48" cy="48" r="2.6" fill="#1d4ed8"/>
+</svg>
