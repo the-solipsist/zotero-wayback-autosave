@@ -15,8 +15,6 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-/* global Zotero */
-
 /*
  * Wayback Autosave: archive every new item's URL in the Internet Archive
  * (Save Page Now), however the item was added (connector, CLI bridge, UI).
@@ -98,7 +96,7 @@ Zotero.WaybackAutosave = (function () {
 				}
 			}
 			pump();
-		}, delay);
+		}, wait);
 	}
 
 	function ZoteroUtilShowPopup(title, body) {
@@ -122,14 +120,18 @@ Zotero.WaybackAutosave = (function () {
 		try {
 			link = xhr.getResponseHeader('Link');
 		}
-		catch (e) {}
+		catch (e) {
+			log(`no Link header: ${e}`);
+		}
 		if (link) {
 			const mementos = [...link.matchAll(/<([^>]+)>;\s*rel="memento"/gi)];
 			if (mementos.length) {
 				try {
 					return new URL(mementos[mementos.length - 1][1], requestURL).href;
 				}
-				catch (e) {}
+				catch (e) {
+					log(`bad memento URL: ${e}`);
+				}
 			}
 		}
 		// Fallback: Content-Location header
@@ -137,12 +139,16 @@ Zotero.WaybackAutosave = (function () {
 		try {
 			loc = xhr.getResponseHeader('Content-Location');
 		}
-		catch (e) {}
+		catch (e) {
+			log(`no Content-Location header: ${e}`);
+		}
 		if (loc) {
 			try {
 				return new URL(loc, requestURL).href;
 			}
-			catch (e) {}
+			catch (e) {
+				log(`bad Content-Location URL: ${e}`);
+			}
 		}
 		// Fallback: we were redirected straight to the snapshot
 		const finalURL = xhr.responseURL || '';
