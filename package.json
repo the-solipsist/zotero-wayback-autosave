@@ -4,7 +4,7 @@
   "description": "Automatically archives every new Zotero item's URL in the Internet Archive Wayback Machine (Save Page Now) \u2014 however the item was added (browser connector, CLI, or manual entry). Manual saves via the item context menu.",
   "main": "bootstrap.js",
   "scripts": {
-    "lint": "eslint bootstrap.js prefs.js content/wayback.js",
+    "lint": "eslint bootstrap.js prefs.js content/wayback.js action-script/zotero-actions-tags-wayback.js",
     "build": "./build.sh"
   },
   "repository": {

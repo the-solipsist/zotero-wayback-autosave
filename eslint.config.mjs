@@ -24,4 +24,15 @@ export default [
   {
     ignores: ["wayback-autosave.xpi"],
   },
+  {
+    // Community action-script variant (runs inside Actions & Tags sandbox)
+    files: ["action-script/*.js"],
+    languageOptions: {
+      globals: {
+        items: "readonly",
+        item: "readonly",
+        require: "readonly",
+      },
+    },
+  },
 ];
